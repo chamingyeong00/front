@@ -1,0 +1,163 @@
+<!-- To do List 만들기
+Create, Read, Update, Delete (CRUD)
+Browser의 저장공간
+1. 쿠키 : 기간을 지정하여 저장.
+2. 세션 : 단 기간 저장
+3. 로컬스토리지 : 반영구적인 데이터, 용량이 큼, 보안 취약 
+    localStorage.setItem(key, value); key:value를 저장
+    localStorage.getItem(key); key에 대한 value를 가져옴
+    localStorage.removeItem(); key의 value 삭제
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 30px;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            height: 36px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+
+        form input {
+            display: block;
+            box-sizing: border-box;
+            border: 0;
+            width: 100%;
+            height: 100%;
+            padding: 4px 16px;
+            outline: none;
+            ;
+        }
+
+        form button {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            margin-right: 6px;
+            border: 0;
+        }
+
+        form button:active {
+            background-color: #c0c0c0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <!-- html에서 양식을 담당하는 태그 다양함 -->
+        <!-- <input type="number"> -->
+        <!-- <input type="date"> -->
+        <input type="text" class="todo">
+        <!-- <button type = "button"></button> tab이동 가능 -->
+        <!-- <button type = "submit">ars</button> 전송 -->
+        <!-- <button type = "reset"></button> reset됨 -->
+        <button type="submit">
+            <span class="material-symbols-outlined">
+                check
+            </span></button>
+
+    </form>
+
+    <div class="todos">
+
+
+    </div>
+
+    <script>
+        const $form = document.querySelector("form");
+        const $todoInput = document.querySelector(".todo");
+        const $todoList = document.querySelector(".todos");
+        // let todo = localStorage.getItem("todo") || []; 
+        let todo = JSON.parse(localStorage.getItem("todo")) || [];
+        console.log(todo);
+
+        // []
+        // ["동해물"] => 동해물
+
+        const saveTodo = function () {
+            localStorage.setItem("todo", JSON.stringify(todo));
+        } //localstorage에 데이터를 적재
+
+        const printList = function () {
+            $todoList.innerHTML = ""; //print하기 전에 비우기
+            // const list = document.createElement("div");
+            // // list.classList.add();
+            // list.className = "list" //속성값을 지정
+            todo.forEach(function (li, i) {
+                const list = document.createElement("div");
+                list.className = "list";
+                list.innerText = todo[i];
+                const delBtn = document.createElement("button");
+                // console.log(delBtn);
+                delBtn.className = "del";
+                delBtn.innerText = "X";
+
+                delBtn.addEventListener("click", function () {
+                    todo.splice(i, 1);
+                    saveTodo();
+                    printList();
+                });
+
+                list.appendChild(delBtn);
+                $todoList.appendChild(list); //선택자에게 마지막자식을 추가함.
+                // console.log(list);
+            });
+        }
+
+        // printList();
+
+        $form.addEventListener("submit", function (e) {
+            e.preventDefault(); //submit 새로고침을 못하도록
+            // console.log("submit!!!");
+            // todo = $todoInput.value.trim(); //사용자의 입력값
+            /*saveTodo 함수로 이동
+            const userInput = $todoInput.value.trim();
+            todo.push(userInput) //베열을 후순위에/ 문자열에 배열을 넣을려니 오류 발생
+            // console.log($todoInput.value.trim());
+
+            // localStorage.setItem("todo", todo); //한번에 한 데이터만 저장됨
+            // console.log(todo);
+            localStorage.setItem("todo", JSON.stringify(todo)); //문자열을 string화
+            */
+            const userInput = $todoInput.value.trim();
+            todo.push(userInput) //사용자의 입력값 todo배열
+
+            saveTodo(); //저장함수 실행
+            printList(); //목록 랜더링
+            $todoInput.value = ""; //input clear
+            // console.log(todo);
+        });
+
+        printList();//목록 랜더링
+
+        // const arr = ["a", "b", "c"];
+        // console.log(arr);
+        // arr.splice(1, 1);
+        // console.log(arr);
+    </script>
+</body>
+
+</html>

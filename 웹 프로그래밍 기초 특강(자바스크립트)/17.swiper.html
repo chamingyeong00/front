@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- 스타일을 자동적으로 제어 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 원하는 방식으로 구축 -->
+     <style>
+        .swiper-slide {
+            height : 300px;
+            border : 1px solid #ccc;
+        }
+     </style>
+</head>
+
+<body>
+    <div class="swiper my-first-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <script>
+        // swiper : 대표적인 javascript 슬라이더 생성 plug-in
+        // swper를 활용할 때, 반드시 swiper 먼저 생성(활성)한 다음 custom css를 작성할 것
+        
+        const firstSlider = new Swiper(".my-first-swiper", {
+            navigation : {
+                nextEl : ".swiper-button-next",
+                prevEl : ".swiper-button-prev"
+            },
+            loop : true,
+            spaceBetween : 30,
+            slidesPerView : 1,
+        });
+        // 어떤 객체를 어떤 동작으로
+
+        firstSlider.on('slideChange', function() {
+            // console.log('sliderChange');
+            console.log(firstSlider.activeIndex);
+        });
+        
+    </script>
+</body>
+
+</html>

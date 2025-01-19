@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            if(조건식){
+                조건이 참일 경우...
+            } else {
+                조건식이 거짓일 경우... 
+            }
+        */
+
+        /*
+            Q1
+            prompt 통해 신발 사이즈를 입력받은 다음,
+            입력받은 사이즈가 270이상이고 290이하면 "재고가 없습니다" 출력.
+        */
+
+        // var size = prompt("원하시는 사이즈를 입력해주세요.");
+
+        // if (size >= 270 && size <= 290){
+        //     alert("재고가 없습니다!");
+        // } else {
+        //     alert("재고가 있습니다!");
+        // }
+
+        /*
+            if(조건식1) {
+                조건식1 참일 경우...
+            } else if(조건식2) {
+                조건식2 참일 경우... 
+            } else if(조건식n) {
+                조건식n이 참일 경우... 
+            } else {
+                그 어떠한 조건식도 참이 아닐 경우...(생략 가능) 
+            }
+        */
+
+        /*  
+            Q2.
+            prompt를 통해 사용자의 나이를 입력받은 다음,
+            나이가 65세 이상이면 "50% 할인입니다."
+            나이가 12세 이하이면 "20% 할인입니다."
+            나이가 6세 미만이면 "무료 입장"
+            그 외, 정상 요금입니다.
+        */
+
+        // var age = prompt("나이를 입력하세요.");
+        // age = parseInt(age);
+
+        // if (age >= 65){
+        //     alert("50% 할인입니다.");
+        // } else if (age >= 6 && age <= 12){
+        //     alert("20% 할인입니다.")
+        // } else if(age < 6){
+        //     alert("무료 입장입니다.");
+        // } else{
+        //     alert("정상 요금입니다.");
+        // }
+
+        /*
+            Q3.
+            confirm(); 을 통해서 "정말 탈퇴하시겠습니까?";
+            확인 -> 비밀번호를 물어본 다음, 입력한 비밀번호가 1234라면 "탈퇴되었습니다."
+            취소 -> "탈퇴가 취소되었습니다."
+        */
+
+        // var withdraw = confirm("정말 탈퇴하시겠습니까?");
+
+        // if(withdraw === true) {
+        //     var userPw = prompt("비밀번호를 입력해주세요.");
+                
+        //     if(userPw === "1234") {
+        //         alert("탈퇴되었습니다.");
+        //     } else {
+        //         alert("비밀번호를 확인해주세요.");
+        //     }
+        // } else {
+        //     alert("탈퇴가 취소되었습니다.");
+        // }
+
+        /*
+            Q4.
+            prompt 통해 신발 사이즈를 입력받은 다음,
+            입력받은 사이즈가 270 이상이고 290이하면 "재고가 없습니다" 출력.
+            * 5단위의 입력값일 경우에만 재고 사항을 피드백할 것.
+        */
+
+        // var size = prompt("사이즈를 입력해주세요!");
+        //     size = parseInt(size);
+
+        // if(size % 5 === 0) {
+        //     if(size >= 270 && size <= 290) {
+        //         alert("재고가 없습니다!");
+        //     } else {
+        //         alert("재고가 있습니다!");
+        //     }
+        // } else {
+        //     alert("5mm단위로 입력해주세요.")
+        // }
+
+        /*
+            키와 몸무게를 물어본 다음,
+            입력받은 키를 바탕으로 표준체중((키-100)*0.9)을 산정하고.
+            입력받은 몸무게가 표준체중보다 20% 이상 더 나가면 => "과체중입니다."
+            입력받은 몸무게가 표준체중보다 10% 이하 덜 나가면 => "미용체중입니다."
+            입력받은 몸무게가 표준체중보다 20% 이하 덜 나가면 => "저체중입니다."
+            그 외, 정상체중입니다.        
+        */
+
+        var userHeight = prompt("키를 입력해주세요.");
+        var userWeight = prompt("몸무게를 입력해주세요.");
+        var userStandard = (userHeight - 100) * 0.9;
+
+        if (userWeight > userStandard * 1.2){
+            alert("과체중입니다.");
+        } else if(userWeight <= userHeight * 0.8){
+            alert("저체중입니다.");
+        } else if(userWeight <= userHeight * 0.9){
+            alert("미용제중입니다.");
+        } else{
+            alert("정상체중입니다.");
+        }
+
+    </script>
+</body>
+</html>

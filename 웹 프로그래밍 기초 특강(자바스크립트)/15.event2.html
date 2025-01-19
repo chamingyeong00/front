@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            /*내부 컨텐츠를 가로로 정렬*/
+            display: flex; 
+            width : 600px;
+            /* 가운데에 배치 */
+            margin: 0 auto;
+        }
+        /* 메뉴 안에 있는 list */
+        .menu .list{
+            line-height: 50px;
+            text-align: center;
+            width: 25%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        /* 마우스 올렸을때 */
+        .menu .list:hover{
+            background-color: #ccc;
+            font-weight: bold;
+        }
+        /* list이면서 on인것 */
+        .menu .list.on{
+            background-color: #333;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .content{
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        .content .con{
+            width: 100%;
+            height: 400px;
+            line-height: 400px;
+            text-align: center;
+            display: none;
+            font-size : 60px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .content .con:first-child{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- .menu + 엔터 자동으로 생성 됨 -->
+    <div class="menu"> 
+        <div class="list on">MENU1</div>
+        <div class="list">MENU2</div>
+        <div class="list">MENU3</div>
+        <div class="list">MENU4</div>
+
+    </div>
+
+    <div class="content">
+        <!-- .con$*4 -->
+        <div class="con">CONTENT1</div>
+        <div class="con">CONTENT2</div>
+        <div class="con">CONTENT3</div>
+        <div class="con">CONTENT4</div>
+    </div>
+
+    <script>
+        // const arr = ["apple", "peach", "grape"];
+        // console.log(arr.indexOf("peach")); 
+
+        const $lists = document.querySelectorAll(".menu .list"); //NodeList
+        // 유사배열은 배열의 내장함수를 사용하지 못하는 경우가 많다
+        // 유사배열을 배열의 형태로 변환시켜준다
+        const listArray = Array.from($lists); //새로운 배열은 만듦
+        // console.log($lists, listArray);
+        const $cons = document.querySelectorAll(".content .con");
+
+
+        // console.log($lists); // NodeList [".list", ".list", ".list", ".list"].addEvenetListener();
+        // console.log($lists.length);
+        // $lists.addEvenetListener("click", () => {
+        //     console.log("clicked!!!");
+        // })
+
+        for(let i = 0; i < $lists.length; i++){
+            // console.log($lists[i]);
+            $lists[i].addEventListener("click", function () {
+                // .list를 클릭할 때, 클릭 "된" list"만" highlight
+                for(let j = 0; j < $lists.length; j++){
+                    $lists[j].classList.remove("on"); //on class제거
+                }
+                // console.log("clicked");
+                // console.log(this); //실제 발생한 이벤트 타객
+                this.classList.add("on"); //on이라는 클래스 추가
+                
+                // 클릭된 list에 해당하는 content를 출력
+                for(let j = 0; j < $cons.length; j++){
+                    $cons[j].style.display = "none";
+                }
+                const idx = listArray.indexOf(this);
+                // console.log(idx);
+                $cons[idx].style.display = "block";
+            
+            });
+        }
+
+    </script>
+</body>
+</html>

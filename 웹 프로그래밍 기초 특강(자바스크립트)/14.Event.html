@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            transition: background 0.2s;
+            cursor: pointer; 
+            /* 커서 모양 */
+        }
+
+        /* 박스이면서 클릭인것 */
+        .box.clicked {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        // 이벤트 : 프로그램에서 발생하는 모든 사건들.
+        /*
+            .addEventListener(이벤트, 함수);
+
+            선택자.addEventListener("event", function() {});
+        */
+
+        const $box = document.querySelector(".box");
+        // $box.addEventListener("click", function() {
+        //     // .box에 클릭이 되었을 때 실행 될 실행문...
+        //     // alert("clicked!!");
+
+        //     // $box.style.backgroundColor = "red";
+        //     // 동적 클래스 제어
+        //     $box.classList.add("clicked");
+        // });
+
+        /*
+            .box를 클릭했을 때 색상이 바뀌고,
+            다시 클릭하면 기존 색상으로 돌아옴
+            
+            첫번째 클릭과
+            두번째 클릭이 다름.
+        */
+
+        // let count = 0;
+        // $box.addEventListener("click", function () {
+        //     count++;
+        //     const i = count % 2;
+        //     console.log(count);
+        //     if (i == 1)
+        //         $box.classList.add("clicked");
+        //     else
+        //         $box.classList.remove("clicked");
+        // })
+
+        // let init = false;
+        // $box.addEventListener("click", () => {
+        //     init = !init;
+        //     // console.log(init);
+        //     if (init)
+        //         $box.classList.add("clicked");
+        //     else
+        //         $box.classList.remove("clicked");
+        // });
+
+        // $box.addEventListener("click", () => {
+        //     // add, remove, toggle
+        //     $box.classList.toggle("clicked");
+        // });
+
+        $box.addEventListener("mouseover", function() {
+            $box.classList.add("clicked");
+            // console.log("over");
+        });
+
+        $box.addEventListener("mouseout", function() {
+            $box.classList.remove("clicked");
+        });
+
+        /*
+            jQuery
+            $(.box).on("clicked", function() {
+                $(this).toggleClass("clicked");
+            })
+            react
+            vue
+            node.js
+            angular.js
+        */
+
+    </script>
+</body>
+
+</html>

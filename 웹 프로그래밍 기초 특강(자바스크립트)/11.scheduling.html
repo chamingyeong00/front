@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 스케쥴링함수
+
+        // 1. 지정된 시간마다 함수를 반복 실행
+        /*
+            setInterval(함수, 시간);
+        */
+
+        var a = setInterval(function() {
+            console.log("repet!");
+        }, 1000)
+
+        // 2. 지정된 시간 이후에 실행
+        /*
+            setTimeout(함수, 시간);
+        */
+       setTimeout(function(){
+            console.log("delayed");
+       }, 3000)
+
+        // 3. 코드의 반복 실행(1)을 멈추는 함수
+        /*
+            clearInterval(변수);
+        */
+        clearInterval(a);
+
+        /*
+            console.log를 5초 동안 다섯번 출력하는 로직
+        */
+
+        var repeater = setInterval(function() {
+            console.log("repeated!");
+        }, 1000)
+
+        setTimeout(function(){
+            clearInterval(repeater);
+        }, 5000);
+
+        // interaction = 상호작용(프로그램과 사용자, 사용자와 사용자, 프로그램과 프로그램)
+        
+
+    </script>
+</body>
+</html>

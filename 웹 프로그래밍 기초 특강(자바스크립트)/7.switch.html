@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            switch(표현식) {
+                case 표현식1 : 표현식1이 표현식과 일치할 경우...
+                break;
+                case 표현식2 : 표현식2가 표현식과 일치할 경우...
+                break;
+                case 표현식n : 표현식n이 표현식과 일치할 경우...
+                break;
+                default : 그 어떠한 표현식에도 일치하지 않을 경우...(생략 가능)
+            }
+        */
+        /*
+            경품 추첨번호(4자리)를 입력받은 다음,
+            1111 : 맥북프로 당첨
+            2222 : 맥북에어 당첨
+            3333 : 에어팟 프로 당첨
+            4444 : 맥미니 당첨
+            그 외 : 꽝! 다음 기회에...
+        */
+
+        // var gift = prompt("경품 추첨 번호를 입력해주세요."); //prompt를 통해 입력받는 데이터는 모두 string
+        // if(gift === "1111") {
+        //     alert("맥북프로 당첨");
+        // } else if(gift === "2222") {
+        //     alert("맥북에어 당첨");
+        // } else if(gift === "3333") {
+        //     alert("에어팟 프로 당첨");
+        // } else if(gift === "4444") {
+        //     alert("맥미니 당첨");
+        // } else {
+        //     alert("꽝! 다음 기회에...");
+        // }
+
+        var num = prompt("경품 추첨 번호를 입력하세요.");
+        var gift; //undefined
+        // 알파벳 4글자가 들어가면 gift는 undefiend로 꽝으로 들어간다
+        if(num.length === 4) {
+            switch(num) {
+                case "1111" : gift = "맥북프로";
+                break;
+                case "2222" : gift = "맥북에어";
+                break;
+                case "3333" : gift = "에어팟프로";
+                break;
+                case "4444" : gift = "맥미니";
+                break;
+            }
+        } else {
+            alert("4자리의 추첨번호를 입력하세요.");
+        }
+
+        // gift의 데이터가 있거나 없거나 둘 중 하나.
+        // falsy(false, undefined, null, NaN, 0, -0, "")
+        
+        if(gift) {
+            // gift 변수가 undefined(falsy)가 아니라면
+            alert(gift + "에 당첨되었습니다. 축하합니다!!");
+        } else {
+            alert("꽝, 다음 기회에...");
+        }
+
+        // switch문은 비교대조가 안됨
+        // 실행문이 복잡하면 코드의 가독성이 떨어질 수 있다.
+        // 그러나 기본적인 단순 대조에 의한 코드실행에서는 굉장히 효율적이고 가독성이 뛰어나다.
+
+
+    </script>
+</body>
+</html>

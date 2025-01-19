@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .container .col {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .container .box {}
+
+        .container .col .box {
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .container .col .box img {
+            width: 100%;
+        }
+
+        .pop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.65);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            cursor: zoom-out;
+        }
+
+        .pop .wrap {
+            width: 100%;
+            max-width: 84%;
+            height: 100%;
+            max-height: 95%;
+            background-color: #fff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+        }
+
+        .pop .wrap img {
+            width: 100%;
+            max-width: 90%;
+            max-height: 95%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <div class="box"> <img src="https://images.unsplash.com/photo-1721332155545-c7a8005a2581?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8
+                " alt=""></div>
+            <div class="box"> <img src="https://plus.unsplash.com/premium_photo-1664544228357-06ce9e98080e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8
+                " alt=""></div>
+            <div class="box"> <img src="https://images.unsplash.com/photo-1731375659532-d3341d0a5b5e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8
+                " alt=""></div>
+        </div>
+        <div class="col">
+            <div class="box"> <img src="https://images.unsplash.com/photo-1731518416224-f052548cf639?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8
+                " alt=""></div>
+            <div class="box"> <img src="https://images.unsplash.com/photo-1719937050446-a121748d4ba0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMXx8fGVufDB8fHx8fA%3D%3D
+                " alt=""></div>
+            <div class="box"> <img src="https://images.unsplash.com/photo-1733348924806-907f487cfd12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMnx8fGVufDB8fHx8fA%3D%3D
+                " alt=""></div>
+        </div>
+        <div class="col">
+            <div class="box"> <img src="https://images.unsplash.com/photo-1734183282010-5d741cf6952d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D
+                " alt=""></div>
+            <div class="box"> <img src="https://images.unsplash.com/photo-1733919504972-4486ea3ddc89?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D
+                " alt=""></div>
+            <div class="box"> <img
+                    src="https://images.unsplash.com/photo-1724961766924-b4574a0ef4d7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzNnx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""></div>
+        </div>
+    </div>
+
+    <div class="pop">
+        <div class="wrap">
+            <img src="" alt="">
+        </div>
+    </div>
+    <!-- modal popup vs layer popup -->
+
+    <script>
+        const $box = document.querySelectorAll(".box");
+        const $pop = document.querySelector(".pop"); //modal
+
+        $box.forEach((item, i) => {
+            item.addEventListener("click", function () {
+                // arrow function을 활용하면 this의 컨텍스트가 부모로 잡힘. (자신을 가리키지 않음) function으로 바꿈
+                // console.log(this);
+                // // console.log(this.childNodes);
+                // console.log(this.querySelector("img"));
+
+                const imgSrc = this.querySelector("img").getAttribute("src");
+                // console.log(imgSrc);
+
+                $pop.style.display = "flex";
+                $pop.querySelector("img").setAttribute("src", imgSrc);
+            });
+        });
+
+        $pop.addEventListener("click", function () {
+            this.style.display = "none";
+            // pop 요소의 자식을 클릭했을 때도 닫히는 이유 : 이벤트전파(capturing) 현상.
+
+            $pop.querySelector(".wrap").addEventListener("click", function (e) {
+                // console.log(e);
+                // e : event 매개변수 : event관련 객체
+                e.stopPropagation(); // 부모로부터 전파된 이벤트(capturing)을 제거(방지)함
+                // e.preventDefault() : 브라우저의 기본 동작(link, form)을 차단
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>

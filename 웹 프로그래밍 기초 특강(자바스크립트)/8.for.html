@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            for(초기식, 조건식, 증감식) {
+                // 조건식이 거짓일 때 까지 실행...
+            }
+        */
+
+        // for(var i = 1; i <= 100; i++) {
+        //     document.write(i + ". 안녕하세요. 유건입니다. <hr/>");
+        // }
+
+        // 짝수에 해당하는 순서의 이름만 출력하기!
+
+        // 1. 짝수의 정의(2로 나누었을 때 나머지가 0)
+        
+        // for(var i = 1; i <= 100; i++) {
+        //     if(i % 2 === 0) {
+        //         document.write(i + ". 안녕하세요. 유건입니다. <hr/>");
+        //     }
+        // }//0.5ms
+        
+
+        // 2. 초기식이 2부터 출발, 2씩 증가
+
+        // for(var i = 2; i <= 50; i+=2) {
+        //     document.write(i + ". 안녕하세요. 유건입니다. <hr/>");
+        // } 0.3ms
+        
+
+        // 3. 출력(실행) 단계에서 보정
+        // var start = performance.now();
+
+        // for(var i = 1; i <= 50; i++) {
+        //     document.write(i*2 + ". 안녕하세요. 유건입니다. <hr/>");
+        // } //0.5ms
+
+        // var end = performance.now();
+        // console.log(end - start + "ms");
+
+
+        /*
+            prompt를 통해 출력을 희망하는 단수를 물어본 다음.
+            입력받은 단수의 구구단표를 출력하기 (document.write)
+        */
+
+        var mul = prompt("구구단 출력기입니다.");
+        document.write("<h1>"+ mul +"단</h1>");
+
+        for(var i = 1; i<= 9; i++) {
+            document.write(mul + " X " + i + " = " + (mul * i) + "<hr/>");
+        };
+    </script>
+</body>
+</html>

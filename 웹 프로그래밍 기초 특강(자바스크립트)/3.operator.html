@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Operator 연산자
+
+        // 1. 이(2)항산술연산자
+        //  + - * / %(나머지)
+        var a1 = 100;
+        var a2 = 50;
+        
+        console.log(a1 % a2);
+
+        // 2. 단항산술연산자
+        // ++ -- (증감연산자)
+        var b1 = 100;
+
+        // 표현식++ : 후위연산자
+        // ++표현식 : 전위연산자
+        b1++; //후위
+        console.log(++b1); //전위
+
+        // 3. 대입/할당연산자
+        // += -= *= /= %=
+        // 좌항에 좌항과 우항의 연산된 결과값을 할당하는 연산자
+        var c1 = 100;
+        var c2 = 50;
+
+        // c1 = c1 + c2;
+        console.log(c1 += c2);
+        console.log(c1);
+
+        /*
+            num = num + 1;
+            num++;
+            num+=1;
+        */
+
+        // 4. 비교연산자
+        //  4-1. 대소비교 연산자
+        //      <, >, >=, <=
+        var d1 = 100;
+        var d2 = 150;
+        console.log(d1 < d2);
+
+        //  4-2. 동등/일치 비교 연산자
+        /*
+            = : 할당하다. 대입하다. 저장하다
+            == : 값이 같다.
+            === : 값과 데이터의 형태가 모두 같다.
+
+            ! : 부정연산자
+            != : 값이 다르다.
+            !== : 값과 데이터의 형태가 모두 다르다.
+        */
+        // var d3 = 123;
+        // var d4 = '123';
+        // console.log(d3 === d4);
+
+        var d3 = true;
+        console.log(!d3);
+
+        // 5. 논리연산자
+        // && : ~이면서, 그리고
+        // || : ~이거나, 또는
+        var e1 = 100;
+        var e2 = 150;
+        var e3 = 200;
+        console.log(e1 < e2 || e2 > e3);
+    </script>
+</body>
+</html>

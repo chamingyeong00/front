@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        h1 {
+            position: fixed;
+            top: 20px;
+            left: 50px;
+            color: #fff;
+        }
+
+        ul {
+            display: flex;
+            gap: 20px;
+            position: fixed;
+            top: 36px;
+            right: 50px;
+        }
+
+        ul li {}
+
+        ul li button {
+            background-color: transparent;
+            border: 0;
+            font-weight: bold;
+            font-size: 24px;
+            color: #fff;
+            opacity: 0.6;
+            /*불투명도*/
+            cursor: pointer;
+        }
+
+        ul li.on button,
+        ul li.on button:hover {
+            opacity: 1;
+        }
+
+        ul li button:hover {
+            opacity: 0.75;
+        }
+
+        section {
+            height: 100vh;
+            /* viewport height 100% 화면이 실제로 보이는 곳*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 120px;
+            font-weight: bold;
+        }
+
+        .s1 {
+            background-color: dodgerblue
+        }
+
+        .s2 {
+            background-color: goldenrod
+        }
+
+        .s3 {
+            background-color: seagreen
+        }
+
+        .s4 {
+            background-color: cornflowerblue
+        }
+
+        .s5 {
+            background-color: violet
+        }
+
+        /* .box{
+            height: 100px;
+            overflow: scroll;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Ctrl + Alt + 화살표(↑/↓) (Windows/Linux) 
+     커서를 여러 줄에 추가하려면 화살표 키를 사용하여 위아래로 이동 -->
+    <!-- section.s$*5 -->
+    <ul>
+
+        <h1>COMPANY LOGO</h1>
+        <!-- :button -->
+        <li class="on"><button type="button">S1</button></li>
+        <li><button type="button">S2</button></li>
+        <li><button type="button">S3</button></li>
+        <li><button type="button">S4</button></li>
+        <li><button type="button">S5</button></li>
+    </ul>
+    <!-- <div class="box">
+        1bc<br/>
+        2bc<br/>
+        3bc<br/>
+        4bc
+    </div> -->
+    <section class="s2">SECTION1</section>
+    <section class="s1">SECTION2</section>
+    <section class="s3">SECTION3</section>
+    <section class="s4">SECTION4</section>
+    <section class="s5">SECTION5</section>
+
+    <script>
+        /*
+            1. li를 클릭하면 클릭한 대상에 해당하는 섹션으로 스크롤을 이동
+            2. 스크롤이 이동될 때, 스크롤의 위치값이 특정 섹션에 해당할 때 적절한 li를 heighlight
+        */
+        const $navi = document.querySelectorAll("ul li button");
+        const $list = document.querySelectorAll("ul li");
+        // 클래스명으로 호출할때 .button
+        const $sections = document.querySelectorAll("section");
+
+        // console.log(navi);
+
+        /*
+            스크롤이 animating하기 위한 방법
+            1. 선택자.scrollIntoView(); 해당 선택자의 위치로 스크롤이 이동.
+                                         약간의 호환성 문제, 새부적인 연출(커스텀)이 어렵다.
+            2. window.scrollTo(); 스크롤을 원하는 위치로 이동 (선호)
+        */
+
+        $navi.forEach(function (list, i) {
+            list.addEventListener("click", function () {
+                // console.log(i);
+                // $sections[i].scrollIntoView({
+                //     behavior: "smooth", //부드러운 스크롤링
+                //     block : "start" //해당 요소의 상단에 스크롤을 위치
+                // });
+
+                const sectionTop = $sections[i].offsetTop;
+                // console.log(sectionTop);
+                window.scrollTo({
+                    top: sectionTop,
+                    behavior: "smooth"
+                });
+            });
+        });
+
+
+
+        // scroll event
+
+        window.addEventListener("scroll", function () {
+            // console.log("아무말");
+            // scrollY(수직 스크롤 위치값) 구하기
+            // console.log(window.scrollY);
+            // console.log(window.scrollX);
+            const scrY = window.scrollY;
+            // console.log(scrY);
+
+            // if (scrY >= $sections[0].offsetTop && scrY <= $sections[1].offsetTop){
+            //     $navi[0].parentNode.classList.add("on");
+            // } else if (scrY >= $sections[1].offsetTop && scrY <= $sections[2].offsetTop){
+            //     $navi[1].parentNode.classList.add("on");
+            // } 
+
+            // if (scrY >= $sections[0].offsetTop && scrY <= $sections[1].offsetTop) {
+            //     $navi[0].parentNode.classList.add("on");
+            // }
+
+            $sections.forEach(function (sec, i) {
+                const secTop = sec.offsetTop;
+                const secHeight = sec.offsetHeight;
+
+                if (scrY >= secTop - 50 && scrY < secTop + secHeight) {
+                    // $list.forEach(function(li) { //두번째 매개변수 생략 가능
+                    // li.classList.remove("on");
+                    // });
+                    $list.forEach(li => li.classList.remove("on"));
+                    $list[i].classList.add("on");
+                }
+            });
+
+            // window.addEventListener("mousewheel", function (){
+            //     console.log("abc");
+            // });
+
+            window.addEventListener("mousewheel", function (e){
+                // console.log(e);
+                const dY = e.deltaY;
+
+                if (dY < 0){ //휠 up
+
+                } else if (dY > 0) { //휠 down
+
+                }
+            });
+
+            window.addEventListener("keydown", function(e) {
+                console.log("abc");
+                console.log(e);
+                console.log(e.key);
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>

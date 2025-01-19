@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 변수 선언키워드의 문제점
+        // - 함수 레벨 스코프 -> 전역 변수를 남발하게 됨
+        // - 중복 선언을 허용
+        // - var 선언키워드를 무시해도 작동함
+        // - 호이스팅(변수에 데이터가 할당되기 전에 변수가 참조 가능함)
+
+        // 스코프(scope) : 유효범위
+        // var b = "전역";
+
+        // function abc () {
+        //     var a = "지역";
+        //     console.log(a, b); //지역에서는 지역과, 전역을 참조할 수 있다.
+        // }
+
+        // abc();
+        // //console.log(a, b);//전역에서는 지역을 참조할 수 없다.
+
+        //1. 문제점
+        // if(b) {
+        //     var c = "블록스코프";
+        // }
+        // console.log(c);
+
+        //2. 문제점
+        // var a = 123;
+        // var a = 234;
+        // console.log(a);
+
+        //3. 문제점
+        // str = "abc";
+        // console.log(str);
+
+        //4. 문제점 
+        // console.log(a);
+        // var a = "123";
+        
+        /*
+            let : 변수
+            const : 상수
+
+            호스이스팅 제거, 중복선언 금지, 블록레벨스코프
+
+            기본적인 변수 선언은 const로 한다.
+            데이터의 변경을 의도해야 할 때 let 키워드를 사용
+        */
+
+        let a = "123";
+        const b = "234";
+
+        if(a === "123") {
+            let c = "블록 레벨 스코프";
+        }
+
+        console.log(c);
+
+        // es2015의 arrow function
+        function abc() {
+
+        }
+        
+        var abc = function() {
+
+        }
+
+        var abc = () => {
+
+        }
+
+        
+    </script>
+</body>
+</html>

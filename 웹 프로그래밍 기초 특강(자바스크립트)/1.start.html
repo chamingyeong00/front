@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    안녕하세요.
+    <!-- <script src="./aaa.js"> (내용) </script> 
+     script 안에 src를 적으면 내용이 먹통됨-->
+
+    <div class="box_1"></div>
+    <div class="box-1"></div>
+
+    <script>
+        // Live Server
+        // mac : command + L, O
+        // win : alt + L, O
+        var abc = 123;
+
+        // 변수(variable) : 데이터를 저장하는 공간
+        // var : 변수 선언 키워드
+        // abc : 변수의 이름
+        // = : 우항을 좌항(변수)에 저장하다(할당연산자)
+        // 123 : 데이터
+        // ; : 명령문이 마침
+
+        console.log(abc);
+
+        // 변수의 작명 규칙
+        // 1. 숫자로 시작 금지
+        // 2. 대소문자를 엄격하게 구분
+        // 3. 띄어쓰기 금지
+        //      myFirstVar (camel case)
+        //      my_first_var (snake case)
+        // 4. 특수문자는 (_, $)외 사용 금지
+
+        // +) 변수명은 변수에 할당되는 데이터의 형태(type), 의미, 역할 등이 유추될 수 있도록...
+
+        var abc = 234;
+
+        console.log(abc);
+
+        //3
+        bbb = "아무말";
+        console.log(bbb);
+
+        //4
+        console.log(aaa);
+        var aaa = "선언";
+
+        /*
+         var 변수 선언키워드의 문제점
+         - 함수 레벨 스코프 -> 전역 변수를 남발하게 됨
+         - 중복 선언을 허용
+         - var 선언키워드를 무시해도 작동함함
+         - 호이스팅(변수에 데이터가 할당되기 전에 변수가 참조가 가능함)
+        */
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // object(객체) : 데이터를 이름(key)으로 관리하는 방법
+
+        const me = {
+            // key : value
+            name : "차민경",
+            age : 22,
+            isHuman : true,
+            favFoods : ["만두", "하이볼", "오징어"],
+            sayHello : function() {
+                console.log("안녕?");
+            },
+            famil : {
+                mother : {
+
+                }
+            }
+        }
+
+        // console.log(me);
+        // console.log(me.age);
+
+        me.sayHello(); // 함수호출
+
+        // javascript 모든 개념은 객체로 구성
+        // 최상위 객체는 window (최상위객체는 호출 시 생략 가능) 
+        alert(); //window.alert() 
+        
+        console.log(window);
+    </script>
+</body>
+</html>
