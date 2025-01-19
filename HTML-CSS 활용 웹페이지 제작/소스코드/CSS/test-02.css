@@ -1,0 +1,298 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* main.container에 대한 스타일 적용부분 */
+main.container {
+    /* border: 1px solid red; */
+    width: 1200px;
+    height: auto;
+    /* 추가부분 */
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: #efefef;
+    box-shadow: 1px 1px 4px black;
+
+    padding: 20px 0px;
+}
+
+/* 제목태그인 h1부터 h6까지 스타일 적용부분 */
+h1.hTag1-6,
+h2.hTag1-6,
+h3.hTag1-6,
+h4.hTag1-6,
+h5.hTag1-6,
+h6.hTag1-6 {
+    font-family: "Noto Sans KR", sans-serif, "맑은 고딕";
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+
+    /* 추가 스타일 적용하기 */
+    border: 2px solid black;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: yellow;
+
+    /* margin: 0px auto; */
+    /* margin-top: 20px; */
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 10px 0px;
+}
+
+h1.hTag1-6 {
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+h2.hTag1-6 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 0px;
+    border-bottom-width: 0px;
+}
+
+h3.hTag1-6 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-style: dashed;
+    border-top-color: red;
+}
+
+h4.hTag1-6 {
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: blue;
+}
+
+h5.hTag1-6 {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-width: 1px;
+    border-top-style: dashed;
+    border-top-color: blue;
+}
+
+h6.hTag1-6 {
+    margin-bottom: 0px;
+}
+
+/* p태그에 대한 스타일 적용부분 */
+/* p{
+    border: 1px solid black;
+} */
+p.Tag-p-001 {
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+    padding: 10px 20px;
+
+    box-sizing: content-box;
+    /* 줄간격 line-height */
+    line-height: 1.5em;
+    /* 들여쓰기 스타일 적용 */
+    text-indent: 15px;
+}
+
+p.Tag-p-001>span {
+    /* 들여쓰기 스타일 적용 */
+    display: inline-block;
+    text-indent: 15px;
+    color: blue;
+    font-weight: bold;
+}
+
+span.sp1 {
+    border: 2px solid red;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 2px 2px 3px black;
+
+}
+
+span.sp1:hover {
+    background-color: yellowgreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+span.sp1>a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+p.Tag-p-002 {
+    border: 2px solid blue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+    padding: 10px 20px;
+    /* box-sizing: content-box; */
+    /* 줄간격 line-height */
+    line-height: 1.5em;
+    /* 문장이 가운데 정렬 */
+    text-align: center;
+    /* 배경색 옐로운그린 */
+    background-color: yellowgreen;
+    /* 글자색상 흰색 */
+    color: #ffffff;
+    font-weight: 700;
+    /* 모서리 라운드 처리 */
+    border-radius: 20px;
+}
+
+p.Tag-p-002:hover {
+    cursor: pointer;
+    font-weight: 100;
+    background-color: black;
+    border: 2px solid black;
+    box-shadow: 2px 2px 3px black, -1px -1px 3px #ccc;
+}
+
+/* 제주이색여행지 스타일 적용부분 */
+div.divTag-001 {
+    border: 2px solid black;
+    width: 600px;
+    height: auto;
+    margin: 0px auto;
+    padding: 10px 20px;
+
+    /* 추가 스타일 부분 */
+    border-radius: 40px;
+    background-color: rgba(27, 88, 242, 0.923);
+}
+
+div.divTag-002 {
+    /* border: 2px solid black; */
+    width: 400px;
+    height: auto;
+    margin: 0px auto;
+
+    margin-bottom: 20px;
+
+    /* 추가 스타일 적용부분 */
+    background-color: orange;
+    padding: 10px 10px 10px 20px;
+    border-radius: 47.727px;
+
+}
+
+div.divTag-002:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    box-shadow: 1px 1px 0px orange, 2px 2px 3px black;
+}
+
+p.Tag-p-003,
+blockquote.bTag-bq-001 {
+    color: white;
+}
+
+p.Tag-p-003 {
+    text-indent: 10px;
+    margin-bottom: 10px;
+}
+
+blockquote.bTag-bq-001 {
+    padding-left: 20px;
+    text-indent: 10px;
+    line-height: 2em;
+}
+
+blockquote.bTag-bq-001>span.title {
+    color: black;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background-color: white;
+}
+
+blockquote.bTag-bq-001>span.title>a:hover {
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* pre태그에 대한 스타일 적용부분 */
+div.divTag-003 {
+    border: 2px solid blue;
+    width: 600px;
+    height: auto;
+    padding: 10px 20px;
+
+    /* 추가부분 */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 40px;
+}
+
+div.divTag-003 h3 {
+    width: 395px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+div.divTag-003 pre {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+div.divTag-003 p {
+    padding-left: 70px;
+}
+
+p.Tag-p-004>span {
+    padding-left: 40px;
+}
+
+/* div.divTag-003 pre,
+div.divTag-003 p{
+background-color: yellowgreen;
+} */
+
+/* 복습문제 */
+div.divTag-004 {
+    border: 3px solid black;
+    width: 600px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 추가부분 */
+    padding: 10px 20px;
+}
+
+div.divTag-004 h3 {
+    margin-bottom: 20px;
+}
+
+div.divTag-004 blockquote {
+    padding-left: 36px;
+}

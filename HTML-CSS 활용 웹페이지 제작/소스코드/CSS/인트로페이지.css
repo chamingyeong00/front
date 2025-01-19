@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap');
+
+/* 배경과 텍스트 중앙 정렬 */
+/* 배경과 텍스트 중앙 정렬 */
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    animation: bgColorChange 5s infinite alternate;
+}
+
+
+/* 큰 제목 스타일 및 애니메이션 */
+h1 {
+    font-size: 7em;   
+    font-family: "Jua", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    position: absolute;
+    animation: textMove 8s ease-in-out infinite, textColorChange 3s infinite alternate;
+    transition: transform 0.3s ease;
+    /* hover 시 부드러운 전환 */
+    cursor: pointer;
+    /* 마우스 커서 변경 */
+}
+
+/* 배경 그라데이션 애니메이션 */
+@keyframes bgColorChange {
+    0% {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    }
+
+    100% {
+        background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+}
+
+/* 텍스트 이동 애니메이션 */
+@keyframes textMove {
+    0% {
+        transform: translateY(100px);
+        /* 아래 */
+    }
+
+    12.5% {
+        transform: translateY(0);
+        /* 중앙 */
+    }
+
+    25% {
+        transform: translateY(-100px);
+        /* 위 */
+    }
+
+    37.5% {
+        transform: translateY(0);
+        /* 중앙 */
+    }
+
+    50% {
+        transform: translateX(-100px);
+        /* 왼쪽 */
+    }
+
+    62.5% {
+        transform: translateX(0);
+        /* 중앙 */
+    }
+
+    75% {
+        transform: translateX(100px);
+        /* 오른쪽 */
+    }
+
+    87.5% {
+        transform: translateX(0);
+        /* 중앙 */
+    }
+
+    100% {
+        transform: translateY(100px);
+        /* 아래로 돌아감 */
+    }
+}
+
+/* 텍스트 색상 변화 애니메이션 */
+@keyframes textColorChange {
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+}
+
+/* 마우스를 올렸을 때 잠시 애니메이션 정지 효과 */
+h1:hover {
+    animation-play-state: paused;
+    /* 애니메이션 멈춤 */  
+}

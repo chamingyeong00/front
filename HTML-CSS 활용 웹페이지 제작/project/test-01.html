@@ -1,0 +1,60 @@
+<!-- ctrl + / : 주석 -->
+
+<!DOCTYPE html>
+<html lang="en"> <!--한글, 영어 세팅팅-->
+
+<head>
+    <meta charset="UTF-8"> <!--렌더링한다-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--1.0크기 2.0이면 2배 크게 보임임 기본적인 세팅값-->
+    <title>test-01 연습</title> <!--제목-->
+    <link rel="stylesheet" type="text/css" href="./css/test-01.css"> <!--단일태그 link는 앞쪽만 열림, 외부 스타일 방식식 -->
+    <link rel="icon" type="image/x-icon" href="./image/원피스1.svg">
+    <!--rel 파일 형태 type 파일속성 href 경로 (파비콘 이미지)-->
+    <!-- 내부 스타일 방식 : 외외부보다 내부 스타일이 먼저 적용(아래꺼)-->
+    <style>
+        h1 {
+            border: 4px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 웹문서 작성 연습 -->
+    <!-- <h1> : 태그 or 요소 -->
+    <!-- 인라인 스타일 방식 -->
+    <!-- &nbsp; 띄어쓰기  -->
+    <h1 style="border: 6px solid green;">시간이란.."블록 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요소"라 한다.
+        <br>블록 요소는<br> 반드시<br> 위치값(너비*높이)+크기+색&nbsp;&nbsp;&nbsp;&nbsp;상 값을 같는다.
+    </h1>
+    <p>내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 &nbsp;&nbsp;&nbsp;&nbsp;꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+        내일 죽을것처럼 오늘을 살고, 영원히 살 것처럼 내일을 꿈 꾸어라.<br>
+    </p>
+    <!-- img : 단일태그 앞에만 열림림, 인라인 요소, 이미지 불러올때 이미지 크기대로 불러옴
+     alt : 설명글(화면 난독기) / 웹표준-->
+    <!-- 별명 주는 방법 1. class 2. id
+     class, id 선택자 값 : 주는 이유 css에서 img값을 주려는데 img가 여러개임 -->
+     <!-- class="image-01" ==  id 
+      class="image-01 id="image-01" 서로 다른 image-01  -->
+    <img id="image-01" src="./image/꽃.jpg" alt="난초 꽃 이미지">
+    <a href="https://dev.w3.org/html5/html-author/charref">엔티티기호</a>
+    <img class="image-01" src="./image/꽃.jpg" alt="난초 꽃이미지" 
+    style="width: 200px; height: 200px; border: 1px solid black; padding: 10px; 
+    box-shadow: 3px 3px 3px black, 2px 2px 2px rgb(33, 33, 33);">
+    <!-- padding: 10px; 위, 왼쪽, 아래, 오른쪽 10px
+     padding: 10px; 20px; 위아래 10px 왼쪽오른쪽 20px
+     padding: 10px 20px; 30px; 40px; 위 10px 오른쪽 20px 아래쪽 30px 왼쪽 40px 
+     css에서 border-box이기때문에 테두리까지 합쳐서 200, 그림사진 190px
+     box-shadow 음영값 첫번째 값 : x축쪽 /두번째 값 : y축쪽 /세번째 값 : 블러효과 -->
+</body>
+
+</html>
+
+<!-- 인라인 스타일 방식(특정한 위치값만 바꿀때) > 내부 > 외부
+ 최대한 외부 링크 방식으로 하기  -->

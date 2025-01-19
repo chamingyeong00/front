@@ -1,0 +1,85 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif, "맑은 고딕";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+    /* 추가요소 스타일 적용부분 */
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+div.contents1 {
+    margin-left: 100px;
+    margin-top: 20px;
+    border: 1px solid red;
+
+    /* 추가요소 */
+    padding: 10px 0px 10px 20px;
+    border: 5px solid darkblue;
+    background-color: aliceblue;
+    width: 600px;
+    height: auto;
+}
+
+/* h2태그에 대한 스타일적용 */
+h2 {
+    width: 200px;
+    height: auto;
+    padding: 10px 20px;
+    text-align: left;
+}
+
+/* dd태그를 오른쪽이동 42px 
+dd태그를 아래쪽으로 10px 이동*/
+div.contents1 dd {
+    margin-left: 42px;
+    margin-bottom: 10px;
+}
+
+div.contents1 dd:last-child {
+    margin-bottom: 0px;
+}
+
+
+/* 올레1코스 소제목(<dd>태그)에 내용을 사라지게 한다. */
+div.contents1 dd>span {
+    display: none;
+}
+
+/* 올레1코드 소제목(<dd>태그)에 마우스오버뵈면 내용이 보이게~ */
+div.contents1 dd:hover {
+    cursor: pointer;
+}
+
+div.contents1 dd:hover>span {
+    display: inline-block;
+    text-decoration: underline black;
+}
+
+/* 복습문제 사자성어 두 번째 문장이 길게나와서 글자간격(자간)을
+줄여서 표현할 수 있도록 한다. */
+div.contents1 dd:hover>span.sp1 {
+    display: inline-block;
+    text-decoration: underline black;
+    letter-spacing: -1px;
+}
+
+
+/* 복습문제 스타일 적용부분 */
+.contents1 h3 {
+    width: 220px;
+    height: auto;
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+/*컨트롤 k + f 자동으로 들어쓰기기*/
+/*   * : 모든 요소를 가져다 쓰겠다*/
+* {
+    margin: 0px;
+    /*여백(박스와의 간격)을 0으로 초기화*/
+    padding: 0px;
+    /*주변 간격(테두리와 글자 간격)을 0으로 초기화*/
+    box-sizing: border-box;
+    /* border-box : 박스너비를 100이 넘지않도록 세팅 
+    padding값이 커지면 글자가 작아짐
+    content-box : 박스너비가 커짐 */
+}
+
+body {
+    background-color: #dddddd;
+    /* 16진수 값*/
+    font-family: "Jersey 10", serif, "맑은 고딕";
+    /*Jersey 10 연결이 안되면(인터넷) serif 시스템 글꼴을 써라 안되면 맑은 고딕 써라*/
+    font-weight: 400;
+    /*100~900*/
+    font-style: normal;
+}
+
+/*외부 스타일 방식*/
+h1 {
+    border: 2px solid blue;
+    width: 600px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 100px;
+    padding: 10px 20px 30px 40px;
+    /*각자 줄수 있음 padding-top:  등등*/
+    /*두께 / solid:닫힌 선 dot:점선 dah:파선*/
+}
+
+p{
+    border: 4px solid red;
+    width: 600px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+
+    box-sizing: content-box;
+}
+
+/*id는 #*/
+img#image-01{
+    border: 3px solid rgb(155, 255, 5);
+}
+
+/*class는 .
+image.image-01 == .image-01*/
+img.image-01{
+    box-sizing: content-box;
+    box-sizing: border-box;
+    /*마지막 값이 적용 됨*/
+    /*border-box를 content-box로 고침
+    content-box : margin, border, padding, content 따로 개별적으로 값을 적용*/
+    
+}

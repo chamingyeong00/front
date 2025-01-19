@@ -1,0 +1,179 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif, "맑은 고딕";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+    /* 추가요소 스타일 적용부분 */
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* 공통적인 스타일 적용부분 */
+ol {
+    list-style-position: inside;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 전체 프레임(contents3)에 대한 스타일 적용 */
+div.contents3 {
+    border: 8px solid rgb(13, 13, 13);
+    width: 400px;
+    height: 637.2px;
+    /*auto값은 자동으로 높이조절*/
+    padding: 40px 20px;
+
+    margin: 0px auto;
+    margin-top: 30px;
+    background-color: aliceblue;
+
+    /* 추가요소 */
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+/* 전체 ul태그에 대한 스타일 적용부분 */
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+    border: 0px solid red;
+    margin-left: 0px;
+
+    /* 추가 */
+    width: 330px;
+    height: 481.2px;
+    padding: 0px 55px;
+}
+
+/* ul태그에 두 번째, 세 번째 li태그에 대한 스타일 */
+div.contents3 ul>li:nth-child(2),
+div.contents3 ul>li:nth-child(3) {
+    margin-top: 10px;
+}
+
+div.contents3 ul>li:nth-child(1)>a {
+    color: green;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+
+div.contents3 ul>li:nth-child(2)>a {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+div.contents3 ul>li:nth-child(3)>a {
+    color: blue;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* 전체 ol태그에 대한 스타일 적용부분 */
+ol {
+    margin-left: 40px;
+
+    /* 추가부분 */
+    border: 2px solid white;
+    background-color: yellowgreen;
+    box-shadow: 1px 1px 2px #333;
+    font-weight: 500;
+
+    /* 추가부분 */
+    padding: 10px 20px 10px 20px;
+    
+}
+
+/* 전체 ul태그에 자식인 li태그에 대한 스타일 적용부분 */
+div.contents3 ul>li:nth-child(1),
+div.contents3 ul>li:nth-child(2) {
+    width: 210px;
+    height: 180px;
+}
+
+/* 전체 ol태그에 자식 li태그에 대인한 스타일 적용부분 */
+div.contents3 ul ol>li {
+    width: 210px;
+    height: 30px;
+
+    /* 추가부분 */
+    margin-bottom: 5px;
+    padding-left: 5px;
+
+}
+
+/* 단 ol태그에 자식중...마지막li태그에 대해서는 
+ margin-bottom: 0px; 적용하기*/
+div.contents3 ul ol>li:last-child {
+    /* 추가부분 */
+    margin-bottom: 0px;
+}
+
+/* ol태그에 자식인 li태그에 마우스오버과 되면 
+배경색을 흰으로 바꾼다. */
+div.contents3 ul ol>li:hover {
+    background-color: #dedede;
+}
+
+
+
+/* h1 태그에 대한 스타일 적용부분 */
+h1 {
+    border: 0px solid red;
+    text-align: center;
+    text-shadow: 1px 1px 3px #333;
+    margin-bottom: 20px;
+}
+
+/* 
+
+서브메뉴에 대한 스타일 적용부분
+1. 클래스명.submenu를 사라지게 한다.
+2. 사라진 클래스명..submenu 보이게 한다.
+
+*/
+/* 1. 클래스명.submenu를 사라지게 한다. */
+div.contents3 ol.submenu {
+    display: none;
+    position: absolute;
+    top: 30px;
+
+}
+
+/* 2. 사라진 클래스명..submenu 보이게 한다. */
+/* 2-1. .submenu에 부모요소인 li태그에 대한
+position: relative;로 셋팅하기 */
+div.contents3 ul>li {
+    position: relative;
+}
+
+/* 2-2. 이제부터 1일차,2일차,3일차 li태그에 마우스오버가되면~
+.submenu가 보이게 처리한다.  */
+div.contents3 ul>li:nth-child(1):hover>ol {
+    display: block;
+}
+
+div.contents3 ul>li:nth-child(2):hover>ol {
+    display: block;
+}
+
+div.contents3 ul>li:nth-child(3):hover>ol {
+    display: block;
+}

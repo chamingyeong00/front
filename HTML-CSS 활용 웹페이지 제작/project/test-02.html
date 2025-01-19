@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test-02 연습</title>
+    <link rel="stylesheet" type="text/css" href="./css/test-02.css">
+    <link rel="icon" type="image/x-ixon" href="./image/원피스1.svg">
+</head>
+
+<body>
+    <!-- 전체를 감싸 주기 -->
+    <main class="container">
+        <!-- 1. 웹문서 요소중 블록요소(태그) h1태그부터 h6태그 연습 -->
+        <!-- h1태그~ h6태그를 제목태그라고~한다  -->
+        <h1 class="hTag1-6" style="color: green;">대한민국 대표음악 K-POP이다!</h1>
+        <h2 class="hTag1-6" style="color: red;">동해물과 백두산이</h2>
+        <h3 class="hTag1-6">마르고 닳도록~</h3>
+        <h4 class="hTag1-6">하느님이 보우하사~</h4>
+        <h5 class="hTag1-6">우리나라만세~~</h5>
+        <h6 class="hTag1-6">무궁화삼천리~</h6>
+        <br>
+        <hr><br>
+
+        <!-- 2. 블록요소인 p태그 한 줄문장 연습 -->
+        <p class="Tag-p-001">동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            <span class="sp1"><a
+                    href="https://search.naver.com/search.naver?ssc=tab.image.all&where=image&sm=tab_jum&query=%ED%91%B8%EB%B0%94%EC%98%A4">팬더곰
+                    푸바오!^^</a></span> 동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+            동해물과 백두산이 마르고닳도록 하느님이 보우하사 우리나라만세!!<br>
+        </p>
+        <br>
+        <hr><br>
+
+
+        <!-- 3. 블록요소인 br태그 연습 -->
+        <p class="Tag-p-002">Lorem ipsum dolor sit amet consectetur <br>
+            adipisicing elit. Placeat, animi velit.<br>
+            Impedit nam est itaque quibusdam <br>
+            laboriosam porro, fuga, voluptatibus<br>
+            aspernatur officia numquam eveniet?<br>
+            Voluptatibus ipsum porro cumque <br>
+            quibusdam debitis!</p>
+        <br>
+        <hr><br>
+
+
+        <!-- 4. 블록요소 blackquote태그(인용문) 연습 -->
+        <!-- 웹문서상에서 인용문으로 표기하고자 할때 사용! -->
+        <div class="divTag-001">
+            <div class="divTag-002">
+                <h1 class="hTag1">제주이색여행지</h1>
+                <h2 class="hTag2">야외텐트를 닮은 건축물'테쉬폰'</h2>
+            </div>
+            <p class="Tag-p-003">유럽의 아일랜드 출신 임피제 신부님이 1954년
+                제주도에 오면서 목장숙소로 짓기 시작한 후
+                사료공장, 성당으로 활용됐습니다.
+            </p>
+            <blockquote class="bTag-bq-001">
+                성이시돌 목장은 제주특별자치도 제주시한림읍 금학리에
+                있는 목장이다. 특히, 이 목장은 제주지역 최초의
+                <span class="title"><a href="./test-01.html">전기업목장(全基業木長)</a></span>으로, 면양을 사육하였던 것으로 유명하다.
+                이시돌목장의 특색은 건축양식으로 태쉬폰도 유명하다.<u>(출처: 향토문화전자대전)</u>
+            </blockquote>
+        </div>
+        <br>
+        <hr><br>
+
+
+        <!--5. 블록요소인 pre태그 연습  -->
+        <div class="divTag-003">
+            <h3 class="hTag3">로컬스토리지(Local-Stroage)</h3>
+            <pre class="preTage">
+            function saveLocal(){
+                var second = document.getElementID("second")                    
+                var thevalue = second.value;
+                localStroage.setItem(1, theValue)
+                gettheLocal();
+            }
+        </pre>
+            <p class="Tag-p-004">
+                function saveLocal(){<br>
+                <span>var second = document.getElementID("second")<br></span>
+                <span>var thevalue = second.value;<br></span>
+                <span>localStroage.setItem(1, theValue)<br></span>
+                <span>gettheLocal();<br></span>
+                }
+            </p>
+        </div>
+        <br>
+        <hr><br>
+
+        <!-- 복습문제 -->
+        <div class="divTag-004">
+            <h3 class="hTag4">재난 대비 국민행동 요령</h3>
+            <blockquote class="bTag-bq-002">지진으로 흔들리는 동안은 테이블(책상)
+                밑에 들어가 몸을 보호한다.<br>(출처:국민안전처)
+            </blockquote>
+        </div>
+    </main>
+
+
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+</body>
+
+</html>

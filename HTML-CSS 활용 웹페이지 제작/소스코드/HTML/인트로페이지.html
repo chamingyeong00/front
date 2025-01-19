@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1차시 학습</title>
+    <link rel="stylesheet" type="text/css" href="./css/인트로페이지.css">
+    <link rel="icon" type="image/x-icon" href="./image/원피스1.svg">
+    
+</head>
+<body>
+    <h1 onclick="changeText()" title="마우스클릭!!">1차시 학습</h1> <!-- 클릭 시 changeText 함수 호출 -->
+
+    <script>
+        // 클릭 시 문장을 변경하는 자바스크립트 함수
+        function changeText() {
+            const textElement = document.querySelector('h1');
+            if (textElement.innerHTML === "1차시 학습") {
+                textElement.innerHTML = "학습을 시작합니다^^";
+            } else {
+                textElement.innerHTML = "1차시 학습";
+            }
+        }
+    </script>
+</body>
+</html>

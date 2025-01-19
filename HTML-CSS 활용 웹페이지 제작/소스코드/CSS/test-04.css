@@ -1,0 +1,321 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans KR", sans-serif, "맑은 고딕";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    /* 추가요소 스타일 적용부분 */
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* 공통요소인 a태그에 대한 스타일 적용부분 */
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+/* 메인 프레임에 대한 스타일 적용부분 */
+div.contents1 {
+    border: 8px solid rgb(13, 13, 13);
+    width: 400px;
+    height: 611.250px;
+    /*auto값은 자동으로 높이조절*/
+    padding: 20px;
+
+    margin: 0px auto;
+    margin-top: 30px;
+    background-color: aliceblue;
+
+    /* 추가요소 */
+    border-left-width: 2px;
+    border-top-width: 2px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+hr.hTag1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 5px;
+    border-top-width: 2px;
+    border-top-color: #333;
+    border-left-width: 1px;
+    border-left-color: #333;
+}
+
+/* ul.uTag1메인 메뉴에 li태그들에 대한 줄 간격 */
+ul.uTag1>li {
+    line-height: 2em;
+}
+
+
+ul.uTag1,
+ul.uTag1-0,
+ul.uTag1-2,
+ul.uTag1-3,
+ul.uTag1-1,
+ul.uTag1-1-1 {
+    list-style-type: none;
+    /* list-style-position: inside;  */
+    border: 0px solid red;
+    width: 200px;
+
+}
+
+ul.uTag1 {
+    list-style-type: decimal;
+    list-style-position: inside;
+    line-height: 1.5em;
+
+    /* 추가스타일적용 */
+    margin-top: 20px;
+}
+
+/* 맛집 li태그 서브메뉴 스타일 부분 */
+ul.uTag1-0 {
+    list-style-type: square;
+    margin-left: 200px;
+    line-height: 1.5em;
+}
+
+/* ul.uTag1-0에 해당되는 요소(노드/태그)를 사라지겠금~*/
+/* 기본적으로 서브메뉴 감추기 */
+ul.uTag1-0 {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+/* 맛집문의 li태그에 마우스를 올리면 서브메뉴 표시 */
+div.contents1>ul>li:nth-child(3):hover>ul {
+    display: block;
+}
+
+/* 숙박 li태그 서브메뉴 스타일 부분 */
+ul.uTag1-2 {
+    list-style-type: disc;
+    margin-left: 200px;
+    line-height: 1.5em;
+}
+
+/* ul.uTag1-2에 해당되는 요소(노드/태그)를 사라지겠금~*/
+/* 기본적으로 서브메뉴 감추기 */
+ul.uTag1-2 {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+/* 숙박문의 li태그에 마우스를 올리면 서브메뉴 표시 */
+div.contents1>ul>li:nth-child(4):hover>ul {
+    display: block;
+}
+
+
+/* 익스트림 li태그 서브메뉴 스타일 부분 */
+ul.uTag1-3 {
+    list-style-type: square;
+    margin-left: 200px;
+    line-height: 1.5em;
+}
+
+/* ul.uTag1-2에 해당되는 요소(노드/태그)를 사라지겠금~*/
+/* 기본적으로 서브메뉴 감추기 */
+ul.uTag1-3 {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+/* 익스트림 li태그에 마우스를 올리면 서브메뉴 표시 */
+div.contents1>ul>li:nth-child(2):hover>ul {
+    display: block;
+}
+
+ul.uTag1-1 {
+    list-style-type: square;
+    margin-left: 200px;
+    line-height: 1.5em;
+}
+
+ul.uTag1-1-1 {
+    list-style-type: disc;
+    margin-left: 42px;
+    line-height: 1.8em;
+}
+
+/* ul.uTag1-1에 해당되는 요소(노드/태그)를 사라지겠금~*/
+/* 기본적으로 서브메뉴 감추기 */
+ul.uTag1-1 {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+/* 맛집문의 li태그에 마우스를 올리면 서브메뉴 표시 */
+
+
+/* 교통문의 li태그에 마우스를 올리면 서브메뉴 표시 */
+/* div.contents1 ul>li:hover>ul {
+    display: block;
+} */
+div.contents1>ul>li:nth-child(5):hover>ul {
+    display: block;
+}
+
+
+/* 서브메뉴의 스타일을 보기 좋게 설정 */
+div.contents1 ul ul li {
+    margin: 5px 0;
+}
+
+/* 서브메뉴의 배경색 및 글자색 적용부분 */
+div.contents1 ul ul {
+    background-color: yellowgreen;
+    box-shadow: 2px 2px 4px black;
+}
+
+div.contents1 ul ul a {
+    color: white;
+}
+
+
+/*  복습문제1 짱구카페 스타일 적용부분 */
+div.contents2 {
+    width: 400px;
+    height: 250px;
+    border: 8px solid black;
+    margin: 0px auto;
+    padding: 20px 50px;
+    background-color: aliceblue;
+
+}
+
+div.contents2 ul {
+    list-style-type: none;
+    list-style-position: inside;
+    border: 0px solid red;
+
+    /*  추가부분 */
+    width: 150px;
+    padding: 10px 10px;
+}
+
+div.contents2 h2 {
+    margin-bottom: 20px;
+
+}
+
+div.contents2 ul {
+    list-style-type: disc;
+}
+
+div.contents2 li {
+    width: 120px;
+    line-height: 1.8em;
+}
+
+/* 서브메뉴에 부모요소인 li태그에 위치값
+position: relative;로 셋팅하면 자식인 ul.submenu가
+절대값을 이 상자안에서 움직일수 있다.
+단, top / bottom / left / right 기준으로 움직이기
+움직일때 position: absolute;을 선언한다.
+} */
+div.contents2 ul>li:nth-child(1) {
+    position: relative;
+}
+
+div.contents2 ul>li:nth-child(3) {
+    position: relative;
+}
+
+div.contents2 ul>li:nth-child(4) {
+    position: relative;
+}
+
+div.contents2 ul>li ul.submenu1 {
+    list-style-type: circle;
+    margin-left: 120px;
+    /* 추가 스타일 부분 */
+    display: none;
+    position: absolute;
+
+    top: 0px;
+    border: 0px solid red;
+    font-size: 0.7em;
+}
+
+/* 아메리카노 메뉴에 마우스를 갖다대면 서브메뉴 
+보이도록 처리하기 */
+div.contents2 ul>li:nth-child(1):hover>ul {
+    display: block;
+}
+
+div.contents2 ul>li ul.submenu2 {
+    list-style-type: square;
+    margin-left: 120px;
+    /* 추가 스타일 부분 */
+    display: none;
+    position: absolute;
+
+    top: 0px;
+    border: 0px solid red;
+    font-size: 0.7em;
+}
+
+
+/* 핫-쵸코메뉴에 마우스를 갖다대면 서브메뉴 
+보이도록 처리하기 */
+div.contents2 ul>li:nth-child(3):hover>ul {
+    display: block;
+}
+
+/* 차 메뉴에 마우스를 갖다대면 서브메뉴 
+보이도록 처리하기 */
+div.contents2 ul>li:nth-child(4):hover>ul {
+    display: block;
+}
+
+/* 서브메뉴의 배경색 및 글자색 적용부분 */
+div.contents2 ul ul.submenu1 {
+    background-color: yellowgreen;
+    box-shadow: 2px 2px 4px black;
+}
+
+div.contents2 ul ul.submenu1 a {
+    color: white;
+}
+
+/* 아메리카노 서브메뉴 배경색 및 글자색 */
+/* 서브메뉴의 배경색 및 글자색 적용부분 */
+div.contents2 ul ul.submenu2 {
+    background-color: yellowgreen;
+    box-shadow: 2px 2px 4px black;
+}
+
+div.contents2 ul ul.submenu2 a {
+    color: white;
+}
